@@ -17,9 +17,6 @@ class CreatePartidosTable extends Migration
             $table->date('fecha');
             $table->integer('goles_casa');
             $table->string('codigo')->unique();
-            // Relación con equipo
-            $table->unsignedBigInteger('equipo_id');
-            $table->foreign('equipo_id')->references('id')->on('equipos')->onDelete('cascade');
             $table->timestamps();
         });
     }

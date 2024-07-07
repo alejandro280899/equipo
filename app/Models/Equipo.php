@@ -10,7 +10,7 @@ class Equipo extends Model
     use HasFactory;
     protected $fillable = ['año', 'aforo', 'codigo', 'estadio', 'ciudad', 'nombre'];
 
-    public function jugador()
+    public function jugadores()
     {
         return $this->hasMany(Jugador::class);
     }
@@ -20,7 +20,7 @@ class Equipo extends Model
         return $this->hasOne(Presidente::class);
     }
 
-    public function partido() {
-        return $this->belongsTo(Partido::class);
+    public function partidos() {
+        return $this->belongsToMany(Partido::class,'partido_equipos');
     }
 }

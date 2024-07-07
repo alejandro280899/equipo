@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $equipo->name ?? __('show') . " " . __('Equipo') }}
+    {{ $jugador->name ?? __('show') . " " . __('Jugador') }}
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('show') }} Equipo</span>
+                            <span class="card-title">{{ __('show') }} Jugador</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary btn-sm" href="{{ route('equipos.index') }}"> {{ __('Volver') }}</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('jugadors.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
@@ -22,28 +22,21 @@
                         
                                 <div class="form-group mb-2 mb20">
                                     <strong>Codigo:</strong>
-                                    {{ $equipo->codigo }}
+                                    {{ $jugador->codigo }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Nombre:</strong>
-                                    {{ $equipo->nombre }}
+                                    {{ $jugador->nombre }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Año:</strong>
-                                    {{ $equipo->año }}
+                                    {{ $jugador->fecha_nac }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Aforo:</strong>
-                                    {{ $equipo->aforo }}
+                                    {{ $jugador->posicion }}
                                 </div>
-                                <div class="form-group mb-2 mb20">
-                                    <strong>Estadio:</strong>
-                                    {{ $equipo->estadio }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
-                                    <strong>Ciudad:</strong>
-                                    {{ $equipo->ciudad }}
-                                </div>
+                                
 
                     </div>
                 </div>

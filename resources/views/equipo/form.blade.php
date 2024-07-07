@@ -18,7 +18,7 @@
         </div>
         <div class="form-group mb-2 mb20">
             <label for="aforo" class="form-label">{{ __('Aforo') }}</label>
-            <input type="text" name="aforo" class="form-control @error('aforo') is-invalid @enderror" value="{{ old('aforo', $equipo?->aforo) }}" id="aforo" placeholder="aforo">
+            <input type="number" min="1" name="aforo" class="form-control @error('aforo') is-invalid @enderror" value="{{ old('aforo', $equipo?->aforo) }}" id="aforo" placeholder="aforo">
             {!! $errors->first('aforo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">

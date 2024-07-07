@@ -22,11 +22,11 @@ class JugadorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'fecha_nac' => 'required|data',
-			'codigo' => 'required|string',
-			'nombre' => 'required|integer',
-			'posicion' => 'required|integer',
-			
+            'fecha_nac' => 'required',
+			'codigo' => 'required',
+			'nombre' => 'required',
+			'posicion' => 'required',
+			'equipo_id' => 'required'
         ];
     }
 }

@@ -53,14 +53,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('equipos.index') }}">Equipo</a>
                         </li>
-{{--                  
+               
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('camioneros.index') }}">Camioneros</a>
+                            <a class="nav-link" href="{{ route('jugadors.index') }}">Jugador</a>
                         </li>
                 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('camion.index') }}">Camión</a>
-                        </li>  --}}
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

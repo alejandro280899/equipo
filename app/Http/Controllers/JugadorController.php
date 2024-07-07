@@ -6,6 +6,7 @@ use App\Models\Jugador;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\JugadorRequest;
+use App\Models\Equipo;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -27,8 +28,9 @@ class JugadorController extends Controller
      */
     public function create(): View
     {
-        $equipo = new Jugador();
-        return view('jugador.create', compact('jugador'));
+        $jugador = new Jugador();
+        $equipos = Equipo::all();
+        return view('jugador.create', compact('jugador','equipos'));
     }
      
     /**
@@ -36,7 +38,8 @@ class JugadorController extends Controller
      */
     public function store(JugadorRequest $request): RedirectResponse
     {
-        Jugador::create($request->validated());
+        $jugador = Jugador::create($request->validated());
+        $jugador->equipo()->associate($request->equipo_id);
         return Redirect::route('jugadors.index')
         ->with('success', 'Jugador created successfully.');
     }

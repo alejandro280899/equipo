@@ -14,7 +14,7 @@ class Partido extends Model
     {
         return $this->hasMany(Gol::class);
     }
-    public function equipo(){
-        return $this->hasOne(Equipo::class);
+    public function equipos(){
+        return $this->belongsToMany(Equipo::class,'partido_equipos');
     }
 }
