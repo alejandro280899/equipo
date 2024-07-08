@@ -36,17 +36,16 @@
                                 <thead class="thead">
                                     <tr>
                                         
-                                        <th>Codigo</th>
+                                        <th>Código</th>
                                         <th>Nombre</th>
-                                        <th>Fecha_nac</th>
-                                        <th>posicion</th>
+                                        <th>Fecha de nacimiento</th>
+                                        <th>Posición</th>
                                      
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($jugadors as $jugador)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
                                            
                                             <td>{{ $jugador->codigo }}</td>
                                             <td>{{ $jugador->nombre }}</td>

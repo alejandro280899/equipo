@@ -38,8 +38,7 @@ class JugadorController extends Controller
      */
     public function store(JugadorRequest $request): RedirectResponse
     {
-        $jugador = Jugador::create($request->validated());
-        $jugador->equipo()->associate($request->equipo_id);
+        Jugador::create($request->validated());
         return Redirect::route('jugadors.index')
         ->with('success', 'Jugador created successfully.');
     }
@@ -60,7 +59,8 @@ class JugadorController extends Controller
     public function edit($id): View
     {
         $jugador = Jugador::find($id);
-        return view('jugador.edit', compact('jugador'));
+        $equipos = Equipo::all();
+        return view('jugador.edit', compact('jugador','equipos'));
     }
 
     /**

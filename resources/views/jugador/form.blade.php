@@ -5,28 +5,28 @@
             <label for="equipo" class="form-label">{{ __('Equipo (Código)') }}</label>
             <select class="form-control" name="equipo_id" id="equipo">
                 @foreach ($equipos as $equipo)
-                    <option value="{{$equipo->id}}">{{$equipo->codigo}}</option>
+                    <option value="{{$equipo->id}}" @selected(count($jugador->toArray()) && $jugador->equipo->id == $equipo->id)>{{$equipo->codigo}}</option>
                 @endforeach
             </select>
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="codigo" class="form-label">{{ __('Codigo') }}</label>
-            <input type="text" name="codigo" class="form-control @error('codigo') is-invalid @enderror" value="{{ old('codigo', $jugador?->codigo) }}" id="codigo" placeholder="codigo">
+            <label for="codigo" class="form-label">{{ __('Código') }}</label>
+            <input type="text" name="codigo" class="form-control @error('codigo') is-invalid @enderror" value="{{ old('codigo', $jugador?->codigo) }}" id="codigo" placeholder="Código">
             {!! $errors->first('codigo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="nombre" class="form-label">{{ __('Nombre') }}</label>
-            <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" value="{{ old('nombre', $jugador?->nombre) }}" id="nombre" placeholder="nombre">
+            <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" value="{{ old('nombre', $jugador?->nombre) }}" id="nombre" placeholder="Nombre">
             {!! $errors->first('nombre', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="fecha_nac" class="form-label">{{ __('fecha_nac') }}</label>
-            <input type="date" name="fecha_nac" class="form-control @error('fecha_nac') is-invalid @enderror" value="{{ old('fecha_nac', $jugador?->fecha_nac) }}" id="fecha_nac" placeholder="fecha_nac">
+            <label for="fecha_nac" class="form-label">{{ __('Fecha de nacimiento') }}</label>
+            <input type="date" name="fecha_nac" class="form-control @error('fecha_nac') is-invalid @enderror" value="{{ old('fecha_nac', $jugador?->fecha_nac) }}" id="fecha_nac" placeholder="Fecha de nacimiento">
             {!! $errors->first('fecha_nac', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="posicion" class="form-label">{{ __('Posicion') }}</label>
-            <input type="text" name="posicion" class="form-control @error('posicion') is-invalid @enderror" value="{{ old('posicion', $jugador?->posicion) }}" id="posicion" placeholder="posicion">
+            <label for="posicion" class="form-label">{{ __('Posición') }}</label>
+            <input type="text" name="posicion" class="form-control @error('posicion') is-invalid @enderror" value="{{ old('posicion', $jugador?->posicion) }}" id="posicion" placeholder="Posición">
             {!! $errors->first('posicion', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
        
